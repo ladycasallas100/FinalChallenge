@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    implementation 'junit:junit:4.13.2'
+    implementation 'org.assertj:assertj-core:3.22.0'
+    implementation 'org.slf4j:slf4j-simple:1.7.36'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
+    testImplementation group: 'net.serenity-bdd', name: 'serenity-cucumber', version: '3.2.5'
+
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+
+// https://mvnrepository.com/artifact/net.serenity-bdd/serenity-core
+    implementation group: 'net.serenity-bdd', name: 'serenity-core', version: '3.2.5'
+    implementation group: 'net.serenity-bdd', name: 'serenity-junit', version: '3.2.5'
+    implementation group: 'net.serenity-bdd', name: 'serenity-screenplay', version: '3.2.5'
+    implementation group: 'net.serenity-bdd', name: 'serenity-screenplay-webdriver', version: '3.2.5'
+
+}
+test {
+    useJUnitPlatform()
+}
